@@ -582,7 +582,7 @@ export default function App() {
             isLoading={loading}
             refreshData={fetchBookings}
             onDeleteBooking={(id) => {
-              if (confirm('注意：目前僅能刪除顯示，Google Sheet 資料需手動刪除。確定嗎？')) {
+              if (window.confirm('注意：目前僅能刪除顯示，Google Sheet 資料需手動刪除。確定嗎？')) {
                 setBookings(prev => prev.filter(b => b.id !== id));
               }
             }}
@@ -596,7 +596,7 @@ export default function App() {
               }
             }}
             onDeleteRoom={(id) => {
-              if (confirm('確定刪除？')) setRooms(prev => prev.filter(r => r.id !== id));
+              if (window.confirm('確定刪除？')) setRooms(prev => prev.filter(r => r.id !== id));
             }}
             onLogout={() => { setIsAdmin(false); setView('home'); }}
           />
